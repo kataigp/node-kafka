@@ -11,7 +11,6 @@ const initAndSend = async () => {
 	const producer = kafka.producer()
 
 	await producer.connect()
-	let i = 0
 
 	setInterval(async () => {
 		try {
@@ -31,8 +30,7 @@ const initAndSend = async () => {
 					},
 				],
 			})
-			console.log(`Successfully wrote... ${key}:${message}`);
-			i++
+			console.log(`Successfully sent... ${key}:${message}`);
 		} catch (err) {
 			console.error('Something went wrong!', err);
 		}

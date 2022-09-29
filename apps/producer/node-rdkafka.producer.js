@@ -30,7 +30,7 @@ const initAndSend = () => {
 				headers
 			);
 			
-			console.log(`Successfully wrote... ${key}:${message}`);
+			console.log(`Successfully sent... ${key}:${message}`);
 
 		}, 2000);
 	});
