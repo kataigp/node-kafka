@@ -2,7 +2,7 @@
 
 ## Steps
 
-1. Download [kafka.yaml](../kubernetes/kafka.yaml) and [zookeeper.yaml](../kubernetes/zookeeper.yaml) or navigate under kubernetes folder.
+1. Download [kafka.yaml](../kubernetes/kafka.yaml), [zookeeper.yaml](../kubernetes/zookeeper.yaml) and [kafka-ui.yaml](../kubernetes/kafka-ui.yaml) or navigate under kubernetes folder.
 
 1. Create namespace `kubectl create namespace kafka`
 1. Apply CRDs and add them to the previously created namespace:
