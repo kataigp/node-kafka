@@ -41,5 +41,8 @@ spec:
               value: zoo1:2181
           image: provectuslabs/kafka-ui:master
           name: kafka-ui
+          resources:
+            requests:
+              memory: "1Gi"
           ports:
             - containerPort: 8080

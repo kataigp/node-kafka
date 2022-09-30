@@ -16,6 +16,8 @@ We basicly have 3 different way to achieve this, from the least complex to the m
     1. [strimzi operator](./docs/k8s-with-strimzi.md)
     1. [headless service and LoadBalancer](./docs/k8s-headless-service.md)
 
+*. [add Istio](add-istio.cmd)
+
 ## Prerequisits
 - node
 - docker
@@ -29,6 +31,8 @@ We basicly have 3 different way to achieve this, from the least complex to the m
 `kubectl get jobs`
 
 `kubectl get all --all-namespaces`
+
+`kubectl scale statefulsets --all -n kafka --replicas=0`
 
 ## More about Kafka
 - https://rmoff.net/2018/08/02/kafka-listeners-explained/
