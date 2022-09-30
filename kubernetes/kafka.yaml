@@ -6,9 +6,12 @@ metadata:
   name: kafka
 spec:
   ports:
-    - name: broker
+    - name: brokerext
       port: 9092
       targetPort: 9092
+    - name: brokerint
+      port: 29092
+      targetPort: 29092
   selector:
     service: kafka-instance
 ---
@@ -44,9 +47,13 @@ spec:
         - name: KAFKA_BROKER_ID
           value: "1"
         - name: KAFKA_LISTENERS
-          value: "PLAINTEXT://:9092"
+          value: "LISTENER_INT://:29092,LISTENER_EXT://:9092,"
         - name: KAFKA_ADVERTISED_LISTENERS
-          value: "PLAINTEXT://localhost:9092"
+          value: "LISTENER_INT://kafka:29092,LISTENER_EXT://localhost:9092"
+        - name: KAFKA_LISTENER_SECURITY_PROTOCOL_MAP
+          value: "LISTENER_EXT:PLAINTEXT,LISTENER_INT:PLAINTEXT"
+        - name: KAFKA_INTER_BROKER_LISTENER_NAME
+          value: "LISTENER_INT"
         - name: KAFKA_ZOOKEEPER_CONNECT
           value: "zoo1:2181"
         - name: ALLOW_PLAINTEXT_LISTENER
@@ -55,3 +62,4 @@ spec:
         name: kafka-instance
         ports:
           - containerPort: 9092
+          - containerPort: 29092

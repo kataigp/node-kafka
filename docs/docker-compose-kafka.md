@@ -25,5 +25,5 @@ These article based on this Youtube
    > if you find somewhere else the kafka-topics `--zookeeper` flag, good to know is deprecated. CLI will throws an error, use `--bootstrap-server` parameter instead of that.
 
 1. Now your all contaiers/services up and running:
-- [Check your kafka-ui](./kafka-ui.md)
-- Test kafka with [console](./kafka-console-producer-and-consumer.md) or from code with basic [node apps](./node-producer-and-consumer.md).
+   - [Check your kafka-ui](./kafka-ui.md)
+   - Test kafka with [console](./kafka-console-producer-and-consumer.md) or from code with basic [node apps](./node-producer-and-consumer.md).
